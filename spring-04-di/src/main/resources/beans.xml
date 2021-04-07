@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.kuang.pojo.Address">
+        <property name="address" value="中国"/>
+    </bean>
+
+    <bean id="student" class="com.kuang.pojo.Student">
+        <!--第一种，普通值注入 value-->
+        <property name="name" value="kkk"/>
+
+        <!--第二种： Bean注入 ref-->
+        <property name="address" ref="address"/>
+
+        <!--第三种： 数组注入 -->
+        <property name="books">
+            <array>
+                <value>sdfdsf</value>
+                <value>dsf</value>
+                <value>sdff</value>
+                <value>ssf</value>
+            </array>
+        </property>
+
+        <!--第四种：list注入-->
+        <property name="hobbies">
+            <list>
+                <value>dsfdf</value>
+                <value>dsfdf</value>
+                <value>dsfdf</value>
+                <value>dsfdf</value>
+                <value>dsfdf</value>
+            </list>
+        </property>
+
+        <!--第五种：map注入-->
+        <property name="card">
+            <map>
+                <entry key="sdsd" value="ss"/>
+                <entry key="s" value="ss"/>
+                <entry key="sd" value="ss"/>
+                <entry key="sds" value="ss"/>
+            </map>
+        </property>
+
+        <!--第六种：set注入-->
+        <property name="games">
+            <set>
+                <value>sdsdD</value>
+                <value>sddD</value>
+                <value>sdsD</value>
+                <value>ssdD</value>
+            </set>
+        </property>
+
+        <!--第七种：null注入-->
+        <property name="wife">
+            <null></null>
+        </property>
+
+        <!--第七种：Properties注入-->
+        <property name="info">
+            <props>
+                <prop key="DSFDS">sdf</prop>
+                <prop key="DSDS">sdf</prop>
+                <prop key="SDS">sdf</prop>
+                <prop key="SFDS">sdf</prop>
+            </props>
+        </property>
+
+
+    </bean>
+</beans>
